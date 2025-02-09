@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أبواب خشبية فاخرة</title>
+    <meta name="description" content="اكتشف أجمل تشكيلات الأبواب الخشبية المصنوعة بأجود أنواع الخشب.">
+    <link rel="stylesheet" href="style1.css">
+    <!-- Ajouter le lien vers Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        /* Style du bouton de retour */
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 20px;
+            transition: 0.3s;
+        }
+        
+        .back-button:hover {
+            background-color: #555;
+        }
+
+        /* ✅ Style pour l'icône WhatsApp fixe */
+        .whatsapp-icon {
+            position: fixed;
+            bottom: 20px; /* Positionnée à 20px du bas */
+            right: 20px; /* Positionnée à 20px du côté droit */
+            background-color: #25D366; /* Couleur de fond de WhatsApp */
+            border-radius: 50%; /* Forme circulaire */
+            padding: 15px;
+            color: white;
+            font-size: 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .whatsapp-icon:hover {
+            transform: scale(1.1); /* Effet de zoom au survol */
+        }
+    </style>
+</head>
+<body dir="rtl">
+   <!-- ✅ Barre de navigation responsive -->
+    <nav class="navbar">
+        <div class="logo">نجارة الرفاهية</div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul class="nav-links">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="produits.html">منتجاتنا</a></li>
+        </ul>
+    </nav>
+
+    <!-- ✅ Section des produits -->
+    <section class="products">
+        <h1 style="font-size: 36px; color: #8B4513; border-bottom: 3px solid #8B4513; display: inline-block; padding-bottom: 10px;">
+            أبواب خشبية فاخرة
+        </h1>
+        <p style="font-size: 20px; color: #654321; background-color: bisque; padding: 15px; border-radius: 10px; display: inline-block; margin-top: 15px;">
+            اكتشف أجمل تشكيلات الأبواب الخشبية المصنوعة بأجود أنواع الخشب.
+        </p>
+        
+        <div class="product-list">
+            <!-- ✅ Génération dynamique des produits -->
+            <script>
+                for (let i = 1; i <= 16; i++) {
+                    document.write(` 
+                        <div class="product-item">
+                            <img src="img/porte/${i}.jpg" alt="باب ${i}" class="product-image">
+                            <h2>باب خشبي ${i}</h2>
+                            <p>تصميم أنيق مع أجود أنواع الخشب والتشطيبات العصرية.</p>
+                            <a href="#" class="whatsapp-button" data-product="باب خشبي ${i}">عرض التفاصيل</a>
+                        </div>
+                    `);
+                }
+            </script>
+        </div>
+    </section>
+    
+    <button id="back-to-top">⬆</button>
+    <script>
+        const backToTop = document.getElementById("back-to-top");
+    
+        window.addEventListener("scroll", function() {
+            if (window.scrollY > 300) { 
+                backToTop.style.display = "block";
+            } else {
+                backToTop.style.display = "none";
+            }
+        });
+    
+        backToTop.addEventListener("click", function() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+
+    <!-- ✅ Script pour rediriger vers WhatsApp avec le nom du produit -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    let whatsappButtons = document.querySelectorAll(".whatsapp-button");
+
+    whatsappButtons.forEach(button => {
+        button.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            let productName = this.getAttribute("data-product");
+            let phoneNumber = "+212717707677";
+            let pageURL = window.location.href; // Récupérer l'URL actuelle de la page
+
+            let message = `مرحبًا، أنا مهتم بـ ${productName}. هل يمكنني معرفة المزيد من التفاصيل؟`;
+            let fullMessage = `${message}\n🔗 رابط المنتج: ${pageURL}`;
+
+            let whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(fullMessage)}`;
+
+            window.location.href = whatsappURL;
+        });
+    });
+});
+
+    </script>
+
+    <script>
+        function toggleMenu() {
+            let nav = document.querySelector(".nav-links");
+            nav.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>
