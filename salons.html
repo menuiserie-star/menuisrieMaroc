@@ -52,7 +52,7 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             let whatsappButtons = document.querySelectorAll(".whatsapp-button");
-
+    
             whatsappButtons.forEach(button => {
                 button.addEventListener("click", function (event) {
                     event.preventDefault();
@@ -60,18 +60,17 @@
                     let productName = this.getAttribute("data-product");
                     let productImage = this.getAttribute("data-image");
                     let phoneNumber = "+212717707677";
-                    let message = `مرحبًا، أنا مهتم بـ ${productName}. هل يمكنني معرفة المزيد من التفاصيل؟`;
-
-                    // Ajouter l'URL de l'image dans le message
-                    let whatsappMessage = `${message} ${encodeURIComponent(productImage)}`;
+                    let imageURL = window.location.origin + "/" + productImage; // Génère le lien complet de l'image
+                    let message = `مرحبًا، أنا مهتم بـ ${productName}. هل يمكنني معرفة المزيد من التفاصيل؟\n🔗 صورة المنتج: ${imageURL}`;
                     
-                    let whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+                    let whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
                     
                     window.location.href = whatsappURL;
                 });
             });
         });
     </script>
+    
     
 
     <script>
