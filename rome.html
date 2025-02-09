@@ -11,23 +11,17 @@
 </head>
 <body dir="rtl">
 
+    <!-- ✅ Barre de navigation -->
     <nav class="navbar">
         <div class="logo">نجارة الرفاهية</div>
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         <ul class="nav-links">
             <li><a href="index.html">الرئيسية</a></li>
-            <li class="dropdown">
-                <a href="#" id="produits-link">منتجاتنا ▾</a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">صالونات مغربية</a></li>
-                    <li><a href="#">مطابخ خشبية</a></li>
-                    <li><a href="#">غرف نوم</a></li>
-                    <li><a href="#">مكاتب وخزائن</a></li>
-                    <li><a href="#">تغليف الحيطان بالخشب</a></li>
-                </ul>
-            </li>
+            <li><a href="produits.html">منتجاتنا</a></li>
+           
         </ul>
     </nav>
+
     <!-- ✅ Section des chambres -->
     <section class="products">
         <h1 style="font-size: 36px; color: #8B4513; border-bottom: 3px solid #8B4513; display: inline-block; padding-bottom: 10px;">
@@ -103,13 +97,5 @@
             nav.classList.toggle("active");
         }
     </script>
-    <script>
-        document.getElementById("produits-link").addEventListener("click", function(event) {
-            event.preventDefault(); // Empêcher la navigation vers une autre page
-            let nav = document.querySelector(".nav-links");
-            nav.classList.toggle("active"); // Afficher/masquer le menu
-        });
-    </script>
-    
 </body>
 </html>
