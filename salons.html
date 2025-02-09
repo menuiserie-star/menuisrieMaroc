@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صالونات مغربية</title>
+    <meta name="description" content="اكتشف أجمل تشكيلات الصالونات العصرية والتقليدية المصنوعة بأجود أنواع الخشب.">
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body dir="rtl">
+
+    <nav class="navbar">
+        <div class="logo">نجارة الرفاهية</div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul class="nav-links">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="produits.html">منتجاتنا</a></li>
+           
+        </ul>
+    </nav>
+    
+
+    <!-- ✅ Section des produits -->
+    <section class="products">
+        <h1 style="font-size: 36px; color: #8B4513; border-bottom: 3px solid #8B4513; display: inline-block; padding-bottom: 10px;">
+            صالونات مغربية فاخرة
+        </h1>
+        <p style="font-size: 20px; color: #654321; background-color: bisque; padding: 15px; border-radius: 10px; display: inline-block; margin-top: 15px;">
+            اكتشف أجمل تشكيلات الصالونات العصرية والتقليدية المصنوعة بأجود أنواع الخشب.
+        </p>
+        
+        
+        <div class="product-list">
+            <!-- ✅ Génération dynamique des produits -->
+            <script>
+                for (let i = 1; i <= 21; i++) {
+                    document.write(`
+                        <div class="product-item">
+                            <img src="img/salon/${i}.jpg" alt="صالون ${i}" class="product-image">
+                            <h2>صالون مغربي ${i}</h2>
+                            <p>تصميم فاخر بأجود أنواع الخشب والتفاصيل الراقية.</p>
+                            <a href="#" class="whatsapp-button" data-product="صالون مغربي ${i}" data-image="img/salon/${i}.jpg">عرض التفاصيل</a>
+                        </div>
+                    `);
+                }
+            </script>
+        </div>
+    </section>
+
+    <!-- ✅ Script pour rediriger vers WhatsApp avec le nom du produit et l'image -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let whatsappButtons = document.querySelectorAll(".whatsapp-button");
+
+            whatsappButtons.forEach(button => {
+                button.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    
+                    let productName = this.getAttribute("data-product");
+                    let productImage = this.getAttribute("data-image");
+                    let phoneNumber = "+212717707677";
+                    let message = `مرحبًا، أنا مهتم بـ ${productName}. هل يمكنني معرفة المزيد من التفاصيل؟`;
+
+                    // Ajouter l'URL de l'image dans le message
+                    let whatsappMessage = `${message} ${encodeURIComponent(productImage)}`;
+                    
+                    let whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+                    
+                    window.location.href = whatsappURL;
+                });
+            });
+        });
+    </script>
+    
+
+    <script>
+        function toggleMenu() {
+            let nav = document.querySelector(".nav-links");
+            nav.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>

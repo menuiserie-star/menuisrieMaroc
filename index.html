@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أفضل خدمات النجارة | تصميم فريد وجودة عالية</title>
+    <meta name="description" content="اكتشف خدماتنا في النجارة: تصميم الصالونات المغربية، المطابخ الخشبية، والأثاث حسب الطلب. اتصل بنا الآن!">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body dir="rtl">
+
+    <!-- شريط التنقل -->
+    <nav class="navbar">
+        <div class="logo">نجارة الرفاهية</div>
+        <ul class="nav-links">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="produits.html">خدماتنا</a></li>
+    
+        </ul>
+        <div class="burger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- القسم الرئيسي -->
+    <section class="hero">
+        <div class="content">
+            <h1>حوّل مساحتك بلمسة من الأناقة</h1>
+            <p>تصاميم خشبية فريدة لجو دافئ وعصري.</p>
+            <a href="produits.html" class="btn">استعرض منتجاتنا</a>
+        </div>
+    </section>
+
+    <script>
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.nav-links');
+        
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('nav-active');
+        });
+    </script>
+
+</body>
+</html>

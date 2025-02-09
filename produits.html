@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صالونات مغربية</title>
+    <meta name="description" content="اكتشف أجمل تشكيلات الصالونات العصرية والتقليدية المصنوعة بأجود أنواع الخشب.">
+    <link rel="stylesheet" href="style1.css">
+    <!-- Ajouter le lien vers Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منتجاتنا | نجارة الرفاهية</title>
+    <meta name="description" content="اكتشف تشكيلتنا الواسعة من الأثاث والديكور الخشبي المصمم خصيصًا لك.">
+    <link rel="stylesheet" href="style1.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body dir="rtl">
+  <!-- ✅ Barre de navigation responsive -->
+<nav class="navbar">
+    <div class="logo">نجارة الرفاهية</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul class="nav-links">
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="produits.html">منتجاتنا</a></li>
+     
+    </ul>
+</nav>
+
+    <section class="products">
+        <h1 style="font-size: 36px; color: #8B4513; border-bottom: 3px solid #8B4513; display: inline-block; padding-bottom: 10px;">
+            منتجاتنا
+        </h1>
+        <p style="font-size: 20px; color: #654321; background-color: bisque; padding: 15px; border-radius: 10px; display: inline-block; margin-top: 15px;">
+            اكتشف تشكيلتنا الواسعة من الأثاث الفاخر والتصاميم المخصصة لك.
+        </p>
+            <!-- ✅ Icône WhatsApp fixée dans le coin de la page -->
+        <a href="https://wa.me/+212717707677" class="whatsapp-icon" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
+        <div class="product-list">
+            <div class="product-item">
+                <img src="img/salon.jpg" alt="صالون 1" class="product-image">
+                <h2>صالونات عصرية</h2>
+                <p> كل صالون من تصميمنا يجسد التراث المغربي بلمسة عصرية، حيث يلتقي الحرف اليدوية بالفن</p>
+                <a id="b1" href="salons.html">منتجات أكثر</a>
+            </div>
+            <div class="product-item">
+                <img src="img/cuisine/7.jpg" alt="صالون 4" class="product-image">
+                <h2>تصاميم مطابخ</h2>
+                <p>اجعل قلب منزلك ينبض بالحياة مع مطابخنا المصممة بعناية، حيث تتلاقى الأناقة مع الوظيفة لتلبية احتياجاتك</p>
+                <a id="b1" href="cuisine.html">منتجات أكثر</a>
+            </div>
+            <div class="product-item">
+                <img src="img/rome/1.jpg" alt="صالون 3" class="product-image">
+                <h2>تجهيزات غرف النوم</h2>
+                <p> غرف النوم لدينا ليست مجرد أماكن للنوم، بل هي ملاذ للهدوء والاسترخاء مع تفاصيل تلامس ذوقك الخاص</p>
+                <a id="b1" href="rome.html">منتجات أكثر</a>
+            </div>
+            <div class="product-item">
+                <img src="img/bureau/4.jpg" alt="صالون 2" class="product-image">
+                <h2>المكاتب</h2>
+                <p> اجعل كل لحظة من عملك مريحة ومبهجة مع مكاتبنا المصممة بعناية لتلبية احتياجاتك العملية</p>
+                <a id="b1" href="bureau.html">منتجات أكثر</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.nav-links');
+        
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('nav-active');
+        });
+    </script>
+     <script>
+        function toggleMenu() {
+            let nav = document.querySelector(".nav-links");
+            nav.classList.toggle("active");
+        }
+    </script>
+    <script>
+        // Gérer le clic du bouton de retour
+        document.getElementById('back-to-products').addEventListener('click', function() {
+            window.location.href = 'produits.html';  // Redirige vers la page des produits
+        });
+    </script>
+    
+
+</body>
+</html>

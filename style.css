@@ -1,0 +1,142 @@
+/* أنماط عامة */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tajawal', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    direction: rtl;
+}
+
+/* شريط التنقل */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffcc00;
+}
+
+/* أيقونة القائمة */
+.burger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* القسم الرئيسي */
+.hero {
+    height: 100vh;
+    background: url('img/background.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.hero .content {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* زر */
+.btn {
+    display: inline-block;
+    padding: 15px 35px;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    background: #4CAF50; /* اللون الأخضر */
+    text-decoration: none;
+    border-radius: 10px;
+    text-align: center;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* تأثير عند تمرير الماوس */
+.btn:hover {
+    background: #45a049; /* أخضر أغمق */
+    transform: scale(1.1);
+}
+
+/* Media Queries pour la version mobile */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        text-align: center;
+        z-index: 999;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .nav-links.nav-active {
+        display: flex;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .nav-links a {
+        font-size: 20px;
+        padding: 10px;
+    }
+}
