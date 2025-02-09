@@ -60,7 +60,7 @@ body {
 /* القسم الرئيسي */
 .hero {
     height: 100vh;
-    background: url('img/background.jpg') no-repeat center center/cover;
+    background: url('img/image1.jpg') no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
