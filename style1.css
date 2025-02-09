@@ -219,3 +219,63 @@ body {
     background-color: #6A3B0B;
     transform: scale(1.1);
 }
+/* ✅ Style du menu déroulant */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #8B4513;
+    min-width: 180px;
+    list-style: none;
+    padding: 0;
+    top: 100%;
+    right: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    padding: 10px;
+}
+
+.dropdown-menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    display: block;
+    padding: 8px;
+}
+
+.dropdown-menu a:hover {
+    background-color: #D2691E;
+}
+
+/* ✅ Style du bouton retour en haut */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #8B4513;
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: none; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#back-to-top:hover {
+    background-color: #6A3B0B;
+    transform: scale(1.1);
+}

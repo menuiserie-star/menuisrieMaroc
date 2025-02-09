@@ -10,16 +10,23 @@
 </head>
 <body dir="rtl">
 
+    <!-- ✅ Navbar -->
     <nav class="navbar">
         <div class="logo">نجارة الرفاهية</div>
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         <ul class="nav-links">
             <li><a href="index.html">الرئيسية</a></li>
-            <li><a href="produits.html">منتجاتنا</a></li>
-           
+            <li class="dropdown">
+                <a href="produits.html">منتجاتنا ▼</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">صالونات مغربية</a></li>
+                    <li><a href="#">مطابخ خشبية</a></li>
+                    <li><a href="#">غرف نوم</a></li>
+                    <li><a href="#">مكاتب و خزائن</a></li>
+                </ul>
+            </li>
         </ul>
     </nav>
-    
 
     <!-- ✅ Section des produits -->
     <section class="products">
@@ -29,7 +36,6 @@
         <p style="font-size: 20px; color: #654321; background-color: bisque; padding: 15px; border-radius: 10px; display: inline-block; margin-top: 15px;">
             اكتشف أجمل تشكيلات الصالونات العصرية والتقليدية المصنوعة بأجود أنواع الخشب.
         </p>
-        
         
         <div class="product-list">
             <!-- ✅ Génération dynamique des produits -->
@@ -47,10 +53,13 @@
             </script>
         </div>
     </section>
-    <button id="back-to-top">⬆</button>
+
+    <!-- ✅ Bouton retour en haut -->
+    <button id="back-to-top"><i class="fas fa-arrow-up"></i></button>
+
     <script>
+        // ✅ Affichage du bouton de retour en haut
         const backToTop = document.getElementById("back-to-top");
-    
         window.addEventListener("scroll", function() {
             if (window.scrollY > 300) { 
                 backToTop.style.display = "block";
@@ -58,47 +67,18 @@
                 backToTop.style.display = "none";
             }
         });
-    
+
+        // ✅ Défilement fluide vers le haut
         backToTop.addEventListener("click", function() {
             window.scrollTo({ top: 0, behavior: "smooth" });
         });
-    </script>
 
-
-    <!-- ✅ Script pour rediriger vers WhatsApp avec le nom du produit et l'image -->
-    <script>
-       document.addEventListener("DOMContentLoaded", function () {
-    let whatsappButtons = document.querySelectorAll(".whatsapp-button");
-
-    whatsappButtons.forEach(button => {
-        button.addEventListener("click", function (event) {
-            event.preventDefault();
-
-            let productName = this.getAttribute("data-product");
-            let productImage = this.getAttribute("data-image");
-            let phoneNumber = "+212717707677";
-            let pageURL = window.location.href; // Récupérer l'URL actuelle de la page
-
-            let message = `مرحبًا، أنا مهتم بـ ${productName}. هل يمكنني معرفة المزيد من التفاصيل؟`;
-            let fullMessage = `${message}\n🔗 رابط المنتج: ${pageURL}\n📷 صورة المنتج: ${productImage}`;
-
-            let whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(fullMessage)}`;
-
-            window.location.href = whatsappURL;
-        });
-    });
-});
-
-    </script>
-   
-    
-    
-
-    <script>
+        // ✅ Affichage du menu déroulant
         function toggleMenu() {
             let nav = document.querySelector(".nav-links");
             nav.classList.toggle("active");
         }
     </script>
+
 </body>
 </html>
