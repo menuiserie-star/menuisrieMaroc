@@ -198,3 +198,24 @@ body {
         grid-template-columns: 1fr;
     }
 }
+/* ✅ Bouton de retour en haut */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #8B4513; /* Marron */
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: none; /* Caché par défaut */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#back-to-top:hover {
+    background-color: #6A3B0B;
+    transform: scale(1.1);
+}
